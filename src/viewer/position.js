@@ -2,6 +2,7 @@ import { POSITION_PREFIX } from "../shared/storage-keys.js";
 import { defaultZoom } from "./zoom.js";
 
 const SAVE_DELAY_MS = 400;
+const PDFJS_HISTORY_KEY = "pdfjs.history";
 
 export function rememberPosition(app, source) {
   // Only these link to a place. Others, like #toolbar=0, shouldn't cost the reader theirs.
@@ -16,6 +17,9 @@ export function rememberPosition(app, source) {
     chrome.storage.local.set({ [pending.key]: pending.value });
     pending = null;
   };
+
+  // PDF.js keeps its own history of recent files. It's unused here and "Clear history" must be complete.
+  localStorage.removeItem(PDFJS_HISTORY_KEY);
 
   const load = app.load;
   app.load = async function (pdfDocument) {
@@ -37,7 +41,9 @@ export function rememberPosition(app, source) {
     } catch (error) {
       console.warn("Could not read saved position", error);
     }
-    return load.call(this, pdfDocument);
+    const loaded = load.call(this, pdfDocument);
+    app.store = null;
+    return loaded;
   };
 
   if (chrome.extension.inIncognitoContext) return;

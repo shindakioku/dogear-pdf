@@ -578,6 +578,16 @@ test("a web page can't use the viewer in a frame", async () => {
   await page.close();
 });
 
+test("PDF.js keeps no separate history of its own", async () => {
+  const page = await openPdf(`${origin}/a.pdf`);
+  await goTo(page, 3);
+  await page.evaluate(() => { PDFViewerApplication.pdfViewer.currentScaleValue = "1.25"; });
+  await new Promise(r => setTimeout(r, 700));
+  assert.equal(await page.evaluate(() => localStorage.getItem("pdfjs.history")), null);
+  await page.evaluate(() => { PDFViewerApplication.pdfViewer.currentScaleValue = "page-width"; });
+  await page.close();
+});
+
 test("a fragment that isn't a position doesn't lose the reader's place", async () => {
   const first = await openPdf(`${origin}/a.pdf`);
   await goTo(first, 7);
