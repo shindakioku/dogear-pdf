@@ -6,6 +6,14 @@ Chrome's built-in viewer forgets your place when you close a tab. Dogear shows P
 
 ![Reading a PDF](store/screenshots/1-reader.png)
 
+The toolbar icon shows what you've been reading and how far you got:
+
+![Reading history in the toolbar popup](store/screenshots/2-history.png)
+
+Press `T` to hide the toolbar and leave just the page:
+
+![Reading with the toolbar hidden](store/screenshots/3-focus.png)
+
 ## Features
 
 - **Remembers your place:** page, position on the page, zoom and rotation, for PDFs on the web and on your computer. A renamed or moved file keeps its place.
