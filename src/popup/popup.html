@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dogear</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<section id="stats" hidden>
+  <div><strong id="statDocuments"></strong><span id="statDocumentsLabel"></span></div>
+  <div><strong id="statFinished"></strong><span id="statFinishedLabel"></span></div>
+  <div><strong id="statPages"></strong><span id="statPagesLabel"></span></div>
+</section>
+<input id="search" type="search" hidden>
+<ul id="history"></ul>
+<p id="empty" hidden></p>
+<button id="clearHistory" type="button" hidden></button>
+<section id="fileAccess" hidden>
+  <p id="fileAccessText"></p>
+  <button id="fileAccessButton" type="button"></button>
+</section>
+<script src="popup.js" type="module"></script>
+</body>
+</html>

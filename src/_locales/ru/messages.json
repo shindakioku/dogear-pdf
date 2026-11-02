@@ -1,0 +1,92 @@
+{
+  "extName": {
+    "message": "Dogear: PDF-читалка, которая помнит страницу"
+  },
+  "extDescription": {
+    "message": "Открывает каждый PDF там, где вы остановились. Без аккаунта и серверов: история чтения остаётся в браузере."
+  },
+  "openInChromeViewer": {
+    "message": "Открыть в просмотрщике Chrome"
+  },
+  "fileAccessNeeded": {
+    "message": "Чтобы запоминать место в PDF на компьютере, включите «Разрешить доступ к URL файлов» на странице расширения."
+  },
+  "fileAccessOpen": {
+    "message": "Открыть настройки расширения"
+  },
+  "numberingFile": {
+    "message": "Стр. файла"
+  },
+  "numberingBook": {
+    "message": "Стр. книги"
+  },
+  "numberingFileTooltip": {
+    "message": "Номер считается по файлу: 20 — это 20-я страница файла. Нажмите, чтобы использовать номера, напечатанные в книге."
+  },
+  "numberingBookTooltip": {
+    "message": "Номер как напечатан в книге: 20 — страница с номером 20. Нажмите, чтобы считать страницы по файлу."
+  },
+  "bookPageHint": {
+    "message": "в книге: $PAGE$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      }
+    }
+  },
+  "statDocuments": {
+    "message": "PDF"
+  },
+  "statFinished": {
+    "message": "дочитано"
+  },
+  "statPages": {
+    "message": "страниц пройдено"
+  },
+  "historyEmpty": {
+    "message": "Пока пусто. Откройте PDF, и он появится здесь."
+  },
+  "historySearch": {
+    "message": "Поиск по названию или адресу"
+  },
+  "historyPosition": {
+    "message": "Стр. $PAGE$ из $TOTAL$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "historyPositionNoTotal": {
+    "message": "Стр. $PAGE$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyRemove": {
+    "message": "Удалить из истории и забыть позицию"
+  },
+  "historyNoLink": {
+    "message": "Открыт через выбор файла, поэтому адреса для повторного открытия нет"
+  },
+  "hideToolbar": {
+    "message": "Скрыть панель (T)"
+  },
+  "showToolbar": {
+    "message": "Показать панель (T)"
+  },
+  "extShortName": {
+    "message": "Dogear"
+  },
+  "historyClear": {
+    "message": "Очистить историю"
+  },
+  "historyClearConfirm": {
+    "message": "Забыть все позиции? Нажмите ещё раз"
+  }
+}

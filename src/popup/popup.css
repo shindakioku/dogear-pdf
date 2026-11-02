@@ -1,0 +1,48 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #1f1f23;
+  --muted: #6b6b76;
+  --line: #e4e4e9;
+  --hover: #f2f2f5;
+  --accent: #c62f2f;
+  --warn-bg: #fff4d6;
+  --warn-fg: #4d3800;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2a2a2e;
+    --fg: #f0f0f3;
+    --muted: #a5a5b0;
+    --line: #434349;
+    --hover: #38383d;
+    --accent: #ff7b72;
+    --warn-bg: #40320a;
+    --warn-fg: #ffe9ad;
+  }
+}
+body { width: 360px; margin: 0; padding: 12px; background: var(--bg); color: var(--fg); font: 13px/1.4 system-ui, sans-serif; }
+p { margin: 0; }
+#stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+#stats[hidden], #search[hidden], #empty[hidden], #fileAccess[hidden], #clearHistory[hidden] { display: none; }
+#stats div { display: flex; flex-direction: column; padding: 8px; border: 1px solid var(--line); border-radius: 8px; }
+#stats strong { font-size: 18px; font-variant-numeric: tabular-nums; }
+#stats span { color: var(--muted); font-size: 11px; }
+#search { box-sizing: border-box; width: 100%; margin-bottom: 8px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: inherit; font: inherit; }
+#history { max-height: 380px; margin: 0; padding: 0; overflow-y: auto; list-style: none; }
+.row { position: relative; border-radius: 6px; }
+.row:hover, .row:focus-within { background: var(--hover); }
+.open { display: block; box-sizing: border-box; width: 100%; padding: 7px 30px 7px 8px; border: 0; background: none; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.open:disabled { cursor: default; }
+.title { display: block; overflow: hidden; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.meta { display: block; color: var(--muted); font-size: 12px; }
+.bar { display: block; height: 3px; margin-top: 4px; overflow: hidden; border-radius: 2px; background: var(--line); }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.remove { position: absolute; top: 5px; inset-inline-end: 4px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--muted); font-size: 15px; line-height: 1; opacity: 0; cursor: pointer; }
+.row:hover .remove, .row:focus-within .remove { opacity: 1; }
+.remove:hover { background: var(--line); color: var(--fg); }
+#empty { padding: 16px 8px; color: var(--muted); text-align: center; }
+#fileAccess { margin-top: 10px; padding: 10px; border-radius: 8px; background: var(--warn-bg); color: var(--warn-fg); }
+#fileAccess button { margin-top: 8px; padding: 5px 10px; font: inherit; cursor: pointer; }
+#clearHistory { margin-top: 6px; padding: 4px 8px; border: 0; border-radius: 4px; background: none; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
+#clearHistory:hover { background: var(--hover); color: var(--fg); }

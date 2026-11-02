@@ -1,0 +1,92 @@
+{
+  "extName": {
+    "message": "Dogear: PDF reader that remembers your page"
+  },
+  "extDescription": {
+    "message": "Opens every PDF where you left off. No account and no servers: your reading history stays in your browser."
+  },
+  "openInChromeViewer": {
+    "message": "Open in Chrome's viewer"
+  },
+  "fileAccessNeeded": {
+    "message": "To remember your place in PDFs on your computer, turn on \"Allow access to file URLs\" on the extension's page."
+  },
+  "fileAccessOpen": {
+    "message": "Open extension settings"
+  },
+  "numberingFile": {
+    "message": "File pages"
+  },
+  "numberingBook": {
+    "message": "Book pages"
+  },
+  "numberingFileTooltip": {
+    "message": "Numbers count pages in the file: 20 is the 20th page. Click to use the numbers printed in the book."
+  },
+  "numberingBookTooltip": {
+    "message": "Numbers are the ones printed in the book: 20 is the page printed as 20. Click to count pages in the file."
+  },
+  "bookPageHint": {
+    "message": "in book: $PAGE$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      }
+    }
+  },
+  "statDocuments": {
+    "message": "PDFs"
+  },
+  "statFinished": {
+    "message": "finished"
+  },
+  "statPages": {
+    "message": "pages reached"
+  },
+  "historyEmpty": {
+    "message": "Nothing here yet. Open a PDF and it will show up."
+  },
+  "historySearch": {
+    "message": "Search by title or address"
+  },
+  "historyPosition": {
+    "message": "Page $PAGE$ of $TOTAL$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "historyPositionNoTotal": {
+    "message": "Page $PAGE$",
+    "placeholders": {
+      "page": {
+        "content": "$1"
+      }
+    }
+  },
+  "historyRemove": {
+    "message": "Remove from history and forget the position"
+  },
+  "historyNoLink": {
+    "message": "Opened from a file picker, so there is no address to reopen"
+  },
+  "hideToolbar": {
+    "message": "Hide toolbar (T)"
+  },
+  "showToolbar": {
+    "message": "Show toolbar (T)"
+  },
+  "extShortName": {
+    "message": "Dogear"
+  },
+  "historyClear": {
+    "message": "Clear history"
+  },
+  "historyClearConfirm": {
+    "message": "Forget all positions? Click again"
+  }
+}

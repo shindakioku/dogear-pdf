@@ -1,0 +1,160 @@
+#openInChromeViewer::before {
+  mask-image: var(--toolbarButton-openFile-icon);
+}
+
+#pageLabelHint {
+  align-self: center;
+  max-width: 14em;
+  margin-inline: 6px;
+  overflow: hidden;
+  color: var(--main-color);
+  font-size: 12px;
+  opacity: 0.75;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#pageNumberingToggle {
+  align-self: center;
+  margin-inline: 6px;
+  padding: 3px 8px;
+  border: 1px solid var(--main-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--main-color);
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#pageNumberingToggle:hover {
+  background: var(--button-hover-color);
+}
+
+#pageLabelHint[hidden],
+#pageNumberingToggle[hidden] {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  #pageLabelHint {
+    display: none;
+  }
+}
+
+#zoomPercent {
+  align-self: center;
+  min-width: 3em;
+  margin-inline: 6px;
+  color: var(--main-color);
+  font-size: 12px;
+  text-align: start;
+}
+
+@media (max-width: 1000px) {
+  #zoomPercent,
+  #scaleSelectContainer {
+    display: none;
+  }
+}
+
+#zoomPercent[hidden] {
+  display: none;
+}
+
+/* Equal side columns keep the page controls centred in the window. When the sides don't fit, they
+   take what they need and the middle shifts rather than overlapping. */
+#toolbarContainer #toolbarViewer {
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  align-items: center;
+  align-content: center;
+}
+
+#toolbarViewerLeft {
+  justify-self: start;
+}
+
+#toolbarViewerRight {
+  justify-self: end;
+}
+
+#toolbarViewerMiddle #numPages {
+  padding-inline-start: 3px;
+  flex: none;
+}
+
+@media (max-width: 650px) {
+  #editorModeButtons,
+  #toolbarViewerRight > .toolbarHorizontalGroup:has(#zoomOutButton) {
+    display: none;
+  }
+}
+
+#hideToolbarButton::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 10l5-5 5 5' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E");
+}
+
+/* Hidden: the page takes the bar's space. The bar slides back over the page without moving it. */
+html.toolbarHidden #viewerContainer {
+  inset-block-start: 0;
+}
+
+html.toolbarHidden .toolbar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 10000;
+  transform: translateY(-100%);
+  transition: transform 120ms ease-out;
+}
+
+html.toolbarHidden.toolbarPeek .toolbar {
+  transform: none;
+}
+
+#toolbarRevealZone,
+#showToolbarTab {
+  display: none;
+  position: fixed;
+  inset-block-start: 0;
+}
+
+html.toolbarHidden #toolbarRevealZone {
+  display: block;
+  inset-inline: 0;
+  z-index: 9998;
+  height: 6px;
+}
+
+html.toolbarHidden #showToolbarTab {
+  display: block;
+  inset-inline-end: 24px;
+  z-index: 9999;
+  width: 36px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  border-radius: 0 0 6px 6px;
+  background: var(--toolbar-bg-color);
+  color: var(--main-color);
+  font-size: 10px;
+  line-height: 14px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+html.toolbarHidden #showToolbarTab:hover {
+  opacity: 1;
+}
+
+#openInChromeViewerBanner {
+  position: fixed;
+  inset-block-start: 48px;
+  inset-inline-start: 50%;
+  z-index: 100000;
+  padding: 10px 16px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}

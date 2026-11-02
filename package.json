@@ -1,0 +1,17 @@
+{
+  "name": "dogear-pdf",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "package": "npm run build && node scripts/package.mjs",
+    "test": "npm run build && node --test test/extension.test.mjs"
+  },
+  "devDependencies": {
+    "fflate": "^0.8.3",
+    "puppeteer": "24"
+  },
+  "description": "Chrome extension that opens every PDF where you left off."
+}
