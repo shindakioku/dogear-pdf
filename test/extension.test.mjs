@@ -588,6 +588,16 @@ test("PDF.js keeps no separate history of its own", async () => {
   await page.close();
 });
 
+test("viewer addresses from before 1.0.0 still open", async () => {
+  for (const url of [`${origin}/a.pdf`, `file://${localPath}`]) {
+    const page = await browser.newPage();
+    await page.goto(`${viewerPrefix()}?DNR:${url}`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(() => window.PDFViewerApplication?.pdfViewer?.pagesCount > 0, { timeout: 8000 });
+    assert.equal(new URL(page.url()).searchParams.get("src"), url);
+    await page.close();
+  }
+});
+
 test("a fragment that isn't a position doesn't lose the reader's place", async () => {
   const first = await openPdf(`${origin}/a.pdf`);
   await goTo(first, 7);

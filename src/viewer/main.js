@@ -6,12 +6,14 @@ import { pageNumbering } from "./page-numbering.js";
 import { arrangeToolbar, hideableToolbar } from "./toolbar.js";
 import { zoomControls } from "./zoom.js";
 
-const REDIRECT_PREFIX = "?redirect:";
+// "?DNR:" is what versions before 1.0.0 redirected to. Tabs Chrome restores from that time still use it.
+const REDIRECT_PREFIXES = ["?redirect:", "?DNR:"];
 
 // Redirect rules can't URL-encode, so normalise before PDF.js parses the query string:
 // a source URL containing "&file=" must not be read as a viewer parameter.
-if (location.search.startsWith(REDIRECT_PREFIX)) {
-  const raw = location.search.slice(REDIRECT_PREFIX.length);
+const prefix = REDIRECT_PREFIXES.find(candidate => location.search.startsWith(candidate));
+if (prefix) {
+  const raw = location.search.slice(prefix.length);
   history.replaceState(null, "", `${location.pathname}?src=${encodeURIComponent(raw)}${location.hash}`);
 }
 const source = new URLSearchParams(location.search).get("src");
