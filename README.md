@@ -2,6 +2,8 @@
 
 A Chrome extension that opens every PDF where you left off.
 
+**[Install from the Chrome Web Store](https://chromewebstore.google.com/detail/dogear-pdf-reader-that-re/meeafpbenmgminmpedoppfekhijopmjk)**
+
 Chrome's built-in viewer forgets your place when you close a tab. Dogear shows PDFs in [PDF.js](https://github.com/mozilla/pdf.js) and saves your position as you read. There's no account, no server and no analytics.
 
 ![Reading a PDF](store/screenshots/1-reader.png)
@@ -25,7 +27,7 @@ Press `T` to hide the toolbar and leave just the page:
 
 ## Install
 
-From the Chrome Web Store, or from source:
+From the [Chrome Web Store](https://chromewebstore.google.com/detail/dogear-pdf-reader-that-re/meeafpbenmgminmpedoppfekhijopmjk), or from source:
 
 ```sh
 npm install
